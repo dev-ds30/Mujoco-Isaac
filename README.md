@@ -1,6 +1,4 @@
 
-[![CI](https://github.com/USER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/USER/REPO/actions/workflows/ci.yml)
-
 # DexBench: Dexterous Manipulation Benchmark (MuJoCo + Isaac + RLHF)
 
 End-to-end kit for **teleop → BC → RLHF → RL** on a simple dexterous manipulation task.
