@@ -1,0 +1,47 @@
+
+<mujoco model="dexbench_three">
+  <option timestep="0.002"/>
+  <default><joint limited="true" damping="0.02"/><geom friction="1 0.1 0.001"/><motor ctrllimited="true" ctrlrange="-1 1"/></default>
+  <worldbody>
+    <geom name="table" type="box" pos="0 0 -0.02" size="0.4 0.3 0.02" rgba="0.8 0.8 0.8 1"/>
+    <body name="cube" pos="0 0 0.02">
+      <joint name="cube_free" type="free"/>
+      <geom type="box" size="0.02 0.02 0.02" rgba="0.8 0.2 0.2 1" mass="0.05"/>
+    </body>
+    <body name="fA" pos="0.09 0 0.0" euler="0 0 180">
+      <joint name="a1" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+      <geom type="capsule" fromto="0 0 0  0 0 0.05" size="0.006"/>
+      <body pos="0 0 0.05">
+        <joint name="a2" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+        <geom type="capsule" fromto="0 0 0  0 0 0.04" size="0.006"/>
+        <geom type="sphere" pos="0 0 0.06" size="0.008" rgba="0.3 0.7 1 1"/>
+      </body>
+    </body>
+    <body name="fB" pos="-0.045 0.078 0.0" euler="0 0 -60">
+      <joint name="b1" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+      <geom type="capsule" fromto="0 0 0  0 0 0.05" size="0.006"/>
+      <body pos="0 0 0.05">
+        <joint name="b2" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+        <geom type="capsule" fromto="0 0 0  0 0 0.04" size="0.006"/>
+        <geom type="sphere" pos="0 0 0.06" size="0.008" rgba="0.3 0.7 1 1"/>
+      </body>
+    </body>
+    <body name="fC" pos="-0.045 -0.078 0.0" euler="0 0 60">
+      <joint name="c1" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+      <geom type="capsule" fromto="0 0 0  0 0 0.05" size="0.006"/>
+      <body pos="0 0 0.05">
+        <joint name="c2" type="hinge" axis="0 1 0" range="-1.05 1.05"/>
+        <geom type="capsule" fromto="0 0 0  0 0 0.04" size="0.006"/>
+        <geom type="sphere" pos="0 0 0.06" size="0.008" rgba="0.3 0.7 1 1"/>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor joint="a1" gear="1"/>
+    <motor joint="a2" gear="1"/>
+    <motor joint="b1" gear="1"/>
+    <motor joint="b2" gear="1"/>
+    <motor joint="c1" gear="1"/>
+    <motor joint="c2" gear="1"/>
+  </actuator>
+</mujoco>
